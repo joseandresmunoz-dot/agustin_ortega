@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entrenador personal certificado - Transformación física, entrenamiento personalizado y seguimiento de progreso">
+    <title>Agustin Ortega - Tu Entrenador Personal</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span><strong> Trainer</strong></span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#resultados" class="nav-link">Resultados</a></li>
+                <li><a href="#planes" class="nav-link">Planes</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+                <span class="nombre-trainer">Agustin Ortega</span>
+            <img src="images/agustin.jpeg" class="trainer-photo" alt="Agustin Ortega - Entrenador Personal">
+            <h1 class="hero-title">
+                Transforma Tu Cuerpo<br>
+        
+                <span class="highlight">Alcanza Tus Metas</span>
+            </h1>
+            <p class="hero-subtitle">
+                Entrenamiento personalizado y seguimiento profesional para lograr la mejor versión de ti mismo
+            </p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Comienza Ahora
+                </a>
+                <a href="#planes" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i> Ver Planes
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3 class="stat-number" data-target="8">0</h3>
+                    <p class="stat-label">Años de Experiencia</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 class="stat-number" data-target="250">0</h3>
+                    <p class="stat-label">Clientes Satisfechos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-fire"></i>
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p class="stat-label">Transformaciones</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p class="stat-label">Certificaciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mis <span class="highlight">Servicios</span></h2>
+                <p class="section-subtitle">Programas diseñados para tu éxito</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="service-title">Entrenamiento Personalizado</h3>
+                    <p class="service-description">
+                        Rutinas diseñadas específicamente para tus objetivos, nivel físico y disponibilidad. Maximiza tus resultados con un plan hecho a tu medida.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Evaluación física completa</li>
+                        <li><i class="fas fa-check"></i> Plan de entrenamiento personalizado</li>
+                        <li><i class="fas fa-check"></i> Ajustes según progreso</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card featured">
+                    <div class="featured-badge">Más Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Seguimiento de Progreso</h3>
+                    <p class="service-description">
+                        Monitoreo constante de tu evolución con métricas precisas. Ajustamos tu programa basándonos en datos reales para garantizar resultados.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Mediciones semanales</li>
+                        <li><i class="fas fa-check"></i> Análisis de composición corporal</li>
+                        <li><i class="fas fa-check"></i> Reportes detallados</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3 class="service-title">Asesoría Nutricional</h3>
+                    <p class="service-description">
+                        Guía nutricional adaptada a tu estilo de vida y objetivos. La alimentación es el 70% del éxito en tu transformación física.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Plan nutricional personalizado</li>
+                        <li><i class="fas fa-check"></i> Recetas y menús semanales</li>
+                        <li><i class="fas fa-check"></i> Seguimiento continuo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results/Testimonials Section -->
+    <section class="results" id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resultados <span class="highlight">Reales</span></h2>
+                <p class="section-subtitle">Lo que dicen mis clientes</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Carlos Méndez" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Carlos Méndez</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "En 6 meses perdí 20kg y gané masa muscular. El seguimiento personalizado y la motivación constante fueron clave para mi transformación. ¡100% recomendado!"
+                    </p>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge">-20kg</span>
+                        <span class="stat-badge">+5kg músculo</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=47" alt="María González" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">María González</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Después de 3 embarazos pensé que nunca recuperaría mi figura. Gracias al plan personalizado logré resultados que no creía posibles. ¡Me siento increíble!"
+                    </p>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge">-15kg</span>
+                        <span class="stat-badge">6 meses</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=33" alt="Juan Rodríguez" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Juan Rodríguez</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Era muy flaco y me costaba ganar peso. Con el programa de volumen y la asesoría nutricional gané 12kg de músculo limpio. Ahora me veo y me siento fuerte."
+                    </p>
+                    <div class="testimonial-stats">
+                        <span class="stat-badge">+12kg músculo</span>
+                        <span class="stat-badge">8 meses</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing" id="planes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Planes de <span class="highlight">Entrenamiento</span></h2>
+                <p class="section-subtitle">Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Plan Básico -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Básico</h3>
+                        <div class="plan-price">
+                            <span class="currency"></span>
+                            <span class="amount">Consultar</span>
+                            <span class="period"></span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Plan de entrenamiento personalizado</li>
+                        <li><i class="fas fa-check"></i> Actualización mensual del programa</li>
+                        <li><i class="fas fa-check"></i> Soporte por email</li>
+                        <li><i class="fas fa-check"></i> Acceso a recursos digitales</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Seguimiento semanal</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Plan nutricional</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Videollamadas</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Empezar Ahora</a>
+                </div>
+                
+                <!-- Plan Premium -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Más Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Premium</h3>
+                        <div class="plan-price">
+                            <span class="currency"></span>
+                            <span class="amount">Consultar</span>
+                            <span class="period"></span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Todo del plan Básico</li>
+                        <li><i class="fas fa-check"></i> Seguimiento semanal de progreso</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional personalizado</li>
+                        <li><i class="fas fa-check"></i> Ajustes según resultados</li>
+                        <li><i class="fas fa-check"></i> 2 videollamadas mensuales</li>
+                        <li><i class="fas fa-check"></i> Soporte prioritario WhatsApp</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Acceso ilimitado a videollamadas</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Empezar Ahora</a>
+                </div>
+                
+                <!-- Plan Elite -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Elite</h3>
+                        <div class="plan-price">
+                            <span class="currency"></span>
+                            <span class="amount">Consultar</span>
+                            <span class="period"></span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Todo del plan Premium</li>
+                        <li><i class="fas fa-check"></i> Videollamadas ilimitadas</li>
+                        <li><i class="fas fa-check"></i> Sesiones presenciales (2/mes)</li>
+                        <li><i class="fas fa-check"></i> Análisis de composición corporal</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional con recetas</li>
+                        <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                        <li><i class="fas fa-check"></i> App móvil premium</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Empezar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comienza Tu <span class="highlight">Transformación</span></h2>
+                <p class="section-subtitle">Contáctame y demos el primer paso juntos</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>¿Listo para cambiar tu vida?</h3>
+                    <p>No esperes más para alcanzar tus objetivos. Completa el formulario y me pondré en contacto contigo en menos de 24 horas.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@agustinortega.ar</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+54 9 2966-413003</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Rio Gallegos, SC - Entrenamiento Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message">Por favor ingresa tu nombre</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message">Por favor ingresa un email válido</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                        <span class="error-message">Por favor ingresa un teléfono válido</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plan">Plan de Interés</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
+                            <option value="basico">Básico</option>
+                            <option value="premium">Premium</option>
+                            <option value="elite">Elite</option>
+                            <option value="consulta">Solo consulta</option>
+                        </select>
+                        <span class="error-message">Por favor selecciona un plan</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="entrenado">¿Has entrenado antes?</label>
+                        <select id="entrenado" name="entrenado" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                        <span class="error-message">Por favor selecciona una opción</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patologia">¿Tenés alguna patología?</label>
+                        <select id="patologia" name="patologia" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                        <span class="error-message">Por favor selecciona una opción</span>
+                    </div>
+
+                    <div class="form-group" id="patologiaDetalle" style="display:none;">
+                        <label for="patologiaTexto">¿Cuáles?</label>
+                        <input type="text" id="patologiaTexto" name="patologiaTexto" placeholder="Describí tu patología">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Comentá aquí cuál es tu objetivo"></textarea>
+                        <span class="error-message">Por favor ingresa un mensaje</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                    
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        ¡Mensaje enviado con éxito! Te contactaré pronto.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>FitPro<strong>Trainer</strong></span>
+                    </div>
+                    <p class="footer-description">
+                        Transformando vidas a través del entrenamiento personalizado y el compromiso con la excelencia.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Entrenamiento Personal</a></li>
+                        <li><a href="#servicios">Seguimiento Online</a></li>
+                        <li><a href="#servicios">Asesoría Nutricional</a></li>
+                        <li><a href="#servicios">Planes Personalizados</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Recibe tips y consejos de entrenamiento</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agustin Ortega. Todos los derechos reservados.</p>
+                <p class="footer-dev">Desarrollado por <a href="https://creandosoluciones.ar" target="_blank" rel="noopener">Creando Soluciones</a></p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5492966413003" class="whatsapp-btn" target="_blank">
+    <img src="images/boton-whatsapp.png" alt="Chat con WhatsApp">
+</a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
