@@ -1,9 +1,4 @@
 // ===================================
-// EmailJS Init
-// ===================================
-emailjs.init('ds1f8OLYr9pDlFbgE');
-
-// ===================================
 // DOM Elements
 // ===================================
 const hamburger = document.getElementById('hamburger');
@@ -11,7 +6,6 @@ const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navbar = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
-const contactForm = document.getElementById('contactForm');
 const statNumbers = document.querySelectorAll('.stat-number');
 
 // ===================================
@@ -84,19 +78,21 @@ backToTop.addEventListener('click', () => {
 // Animated Counter for Stats
 // ===================================
 const animateCounter = (element, target, duration = 2000) => {
+    const prefix = element.getAttribute('data-prefix') || '';
+    const suffix = element.getAttribute('data-suffix') || '';
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const updateCounter = () => {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start);
+            element.textContent = prefix + Math.floor(start) + suffix;
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target;
+            element.textContent = prefix + target + suffix;
         }
     };
-    
+
     updateCounter();
 };
 
@@ -116,160 +112,24 @@ statNumbers.forEach(stat => {
 });
 
 // ===================================
-// Form Validation and Submission
+// FAQ Accordion
 // ===================================
-const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-};
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
 
-const validatePhone = (phone) => {
-    const re = /^[\d\s\-\+\(\)]+$/;
-    return phone === '' || re.test(phone);
-};
+    question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
 
-const showError = (formGroup, message) => {
-    formGroup.classList.add('error');
-    const errorMessage = formGroup.querySelector('.error-message');
-    if (errorMessage) {
-        errorMessage.textContent = message;
-    }
-};
+        faqItems.forEach(other => {
+            other.classList.remove('open');
+            other.querySelector('.faq-answer').style.maxHeight = null;
+        });
 
-const clearError = (formGroup) => {
-    formGroup.classList.remove('error');
-};
-
-const validateForm = () => {
-    let isValid = true;
-    
-    // Clear all previous errors
-    document.querySelectorAll('.form-group').forEach(group => {
-        clearError(group);
-    });
-    
-    // Validate name
-    const nameInput = document.getElementById('name');
-    const nameGroup = nameInput.closest('.form-group');
-    if (nameInput.value.trim() === '') {
-        showError(nameGroup, 'Por favor ingresa tu nombre');
-        isValid = false;
-    } else if (nameInput.value.trim().length < 2) {
-        showError(nameGroup, 'El nombre debe tener al menos 2 caracteres');
-        isValid = false;
-    }
-    
-    // Validate email
-    const emailInput = document.getElementById('email');
-    const emailGroup = emailInput.closest('.form-group');
-    if (emailInput.value.trim() === '') {
-        showError(emailGroup, 'Por favor ingresa tu email');
-        isValid = false;
-    } else if (!validateEmail(emailInput.value)) {
-        showError(emailGroup, 'Por favor ingresa un email válido');
-        isValid = false;
-    }
-    
-    // Validate phone (optional but must be valid format if provided)
-    const phoneInput = document.getElementById('phone');
-    const phoneGroup = phoneInput.closest('.form-group');
-    if (phoneInput.value.trim() !== '' && !validatePhone(phoneInput.value)) {
-        showError(phoneGroup, 'Por favor ingresa un teléfono válido');
-        isValid = false;
-    }
-    
-    // Validate plan selection
-    const planSelect = document.getElementById('plan');
-    const planGroup = planSelect.closest('.form-group');
-    if (planSelect.value === '') {
-        showError(planGroup, 'Por favor selecciona un plan');
-        isValid = false;
-    }
-    
-    // Validate message
-    const messageInput = document.getElementById('message');
-    const messageGroup = messageInput.closest('.form-group');
-    if (messageInput.value.trim() === '') {
-        showError(messageGroup, 'Por favor ingresa un mensaje');
-        isValid = false;
-    } else if (messageInput.value.trim().length < 10) {
-        showError(messageGroup, 'El mensaje debe tener al menos 10 caracteres');
-        isValid = false;
-    }
-    
-    return isValid;
-};
-
-// Mostrar/ocultar campo de patología
-document.getElementById('patologia').addEventListener('change', function () {
-    const detalle = document.getElementById('patologiaDetalle');
-    detalle.style.display = this.value === 'si' ? 'block' : 'none';
-    if (this.value !== 'si') {
-        document.getElementById('patologiaTexto').value = '';
-    }
-});
-
-// Handle form submission
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-        const btn = contactForm.querySelector('button[type="submit"]');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-
-        const templateParams = {
-            nombre:    document.getElementById('name').value,
-            email:     document.getElementById('email').value,
-            telefono:  document.getElementById('phone').value,
-            plan:      document.getElementById('plan').value,
-            entrenado: document.getElementById('entrenado').value,
-            patologia: document.getElementById('patologia').value,
-            patologia_detalle: document.getElementById('patologiaTexto').value || 'No aplica',
-            mensaje:   document.getElementById('message').value
-        };
-
-        emailjs.send('service_795hpnt', 'template_q4es57m', templateParams)
-            .then(() => {
-                const successMessage = document.getElementById('formSuccess');
-                successMessage.classList.add('show');
-                contactForm.reset();
-                document.getElementById('patologiaDetalle').style.display = 'none';
-                setTimeout(() => successMessage.classList.remove('show'), 5000);
-                contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .catch((error) => {
-                console.error('EmailJS error:', error);
-                alert('Hubo un error al enviar el mensaje. Por favor intentá de nuevo.');
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje';
-            });
-    }
-});
-
-// Real-time validation on input
-const inputs = contactForm.querySelectorAll('input, textarea, select');
-inputs.forEach(input => {
-    input.addEventListener('blur', () => {
-        const formGroup = input.closest('.form-group');
-        
-        if (input.value.trim() !== '') {
-            if (input.type === 'email' && !validateEmail(input.value)) {
-                showError(formGroup, 'Por favor ingresa un email válido');
-            } else if (input.type === 'tel' && !validatePhone(input.value)) {
-                showError(formGroup, 'Por favor ingresa un teléfono válido');
-            } else {
-                clearError(formGroup);
-            }
-        }
-    });
-    
-    input.addEventListener('input', () => {
-        const formGroup = input.closest('.form-group');
-        if (formGroup.classList.contains('error') && input.value.trim() !== '') {
-            clearError(formGroup);
+        if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
         }
     });
 });
@@ -292,7 +152,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in animation to sections
-const sections = document.querySelectorAll('.services, .results, .pricing, .contact');
+const sections = document.querySelectorAll('.about, .goals, .pricing, .online, .steps, .results, .method, .faq, .final-cta, .instagram-section');
 sections.forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
@@ -347,14 +207,6 @@ allLinks.forEach(link => {
 });
 
 // ===================================
-// Prevent Form Resubmission on Page Reload
-// ===================================
-if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-}
-
-// ===================================
 // Console Log for Development
 // ===================================
-console.log('%c🏋️ FitProTrainer Landing Page Loaded! 🏋️', 'color: #dc2626; font-size: 20px; font-weight: bold;');
-console.log('%cDeveloped with ❤️ for fitness enthusiasts', 'color: #a3a3a3; font-size: 14px;');
+console.log('%c💪 Agustín Ortega - Personal Trainer 💪', 'color: #dc2626; font-size: 20px; font-weight: bold;');

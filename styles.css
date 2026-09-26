@@ -110,10 +110,11 @@ select {
 .trainer-photo {
     width: 300px;
     max-width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--color-primary);
     margin: auto;
-
 }
 
 /* ===================================
@@ -216,6 +217,7 @@ select {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     gap: 35px;
 }
 
@@ -223,6 +225,7 @@ select {
     font-weight: 500;
     position: relative;
     padding: 5px 0;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -1103,6 +1106,7 @@ select {
         background: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(10px);
         flex-direction: column;
+        align-items: stretch;
         padding: 40px 30px;
         box-shadow: var(--shadow-lg);
         transition: var(--transition);
@@ -1212,5 +1216,457 @@ select {
         right: 20px;
         width: 40px;
         height: 40px;
+    }
+}
+
+/* Instagram Section */
+.instagram-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    text-align: center;
+}
+
+.instagram-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.instagram-icon {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.instagram-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.instagram-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.instagram-section .btn {
+    background: #fff;
+    color: #833ab4;
+    font-weight: 600;
+}
+
+.instagram-section .btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .instagram-title {
+        font-size: 2rem;
+    }
+
+    .instagram-icon {
+        font-size: 3rem;
+    }
+}
+
+/* ===================================
+   Nav CTA + Button sizes
+   =================================== */
+.btn-nav {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+}
+
+.btn-lg {
+    padding: 18px 44px;
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   Hero location line
+   =================================== */
+.hero-location {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-location i {
+    color: var(--color-primary);
+    margin-right: 8px;
+}
+
+/* ===================================
+   About Section
+   =================================== */
+.about {
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+}
+
+.about-title {
+    text-align: left;
+}
+
+.about-lead {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* ===================================
+   Goals Section
+   =================================== */
+.goals {
+    padding: 100px 0;
+    background: var(--color-bg-darker);
+}
+
+.center-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ===================================
+   Included list (Presencial)
+   =================================== */
+.included-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 30px;
+    margin-bottom: 50px;
+}
+
+.included-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+}
+
+.included-list i {
+    color: var(--color-primary);
+}
+
+/* Smaller price for ARS amounts */
+.amount-ars {
+    font-size: 2.6rem;
+}
+
+/* ===================================
+   Online Section
+   =================================== */
+.online {
+    padding: 100px 0;
+    background: var(--color-bg-darker);
+}
+
+.online-panel {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(220, 38, 38, 0.07) 100%);
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+.online-intro {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.online-text {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.online-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 30px;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.online-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text);
+}
+
+.online-features i {
+    color: var(--color-primary);
+}
+
+.online-price {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+/* ===================================
+   Steps Section
+   =================================== */
+.steps {
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.step-card {
+    padding: 35px 25px;
+    background: var(--color-bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.step-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.step-text {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   Method Section
+   =================================== */
+.method {
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+}
+
+/* ===================================
+   Testimonial goal line
+   =================================== */
+.testimonial-goal {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================
+   FAQ Section
+   =================================== */
+.faq {
+    padding: 100px 0;
+    background: var(--color-bg-darker);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item.open {
+    border-color: var(--color-primary);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 24px;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.faq-question i {
+    color: var(--color-primary);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+    padding: 0 24px 22px;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+/* ===================================
+   Final CTA Section
+   =================================== */
+.final-cta {
+    padding: 110px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    text-align: center;
+}
+
+.final-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.final-cta .section-subtitle {
+    margin-bottom: 35px;
+}
+
+.final-cta .btn-lg {
+    margin-bottom: 30px;
+}
+
+.final-cta-locations {
+    color: var(--color-text-muted);
+    line-height: 2;
+}
+
+.final-cta-locations i {
+    color: var(--color-primary);
+    margin-right: 8px;
+}
+
+/* ===================================
+   New sections responsive
+   =================================== */
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-photo {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .about-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .online-features {
+        grid-template-columns: 1fr;
+    }
+
+    .online-panel {
+        padding: 35px 25px;
+    }
+
+    .amount-ars {
+        font-size: 2rem;
+    }
+}
+
+/* ===================================
+   Navbar / hero overlap fix (desktop)
+   =================================== */
+@media (min-width: 641px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 130px 0 70px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .btn-nav {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hero-title,
+    .nombre-trainer {
+        font-size: 3rem;
+    }
+
+    .trainer-photo {
+        width: 240px;
     }
 }
