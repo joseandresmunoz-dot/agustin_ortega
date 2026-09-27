@@ -19,5 +19,6 @@ Static landing page for a personal trainer. No build, no package manager, no tes
 - FAQ is a JS accordion (`.faq-item` / `.faq-question` / `.faq-answer`, one open at a time); answer height is set via `scrollHeight` in JS.
 - New style blocks go at the end of `styles.css`, reusing CSS variables and card/grid patterns (`.service-card`, `.pricing-card`).
 - Desktop hero uses `min-height: 100vh` + top padding (not fixed `100vh`) so content never slides under the fixed navbar; nav tightens below 1100px (`gap`, smaller `.btn-nav`/logo/hero type) since 5 links + CTA overflow narrower desktop widths. Mobile menu breakpoint stays at 968px.
+- Desktop-only (≥969px) hero is 2 columns: text left, photo right via grid placement (photo spans all rows, no HTML reorder); `.nombre-trainer` becomes a small red eyebrow. Mobile keeps the original centered column — don't touch it.
 - Testimonial avatars are local `.jpeg`: `images/carolina.jpeg`, `images/joseluis.jpeg`, `images/rosa.jpeg`.
 - Prices are hardcoded ARS in `index.html` (presencial $190.000/$220.000/$240.000, online $80.000) and mirrored in the JSON-LD `priceRange`.
