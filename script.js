@@ -152,7 +152,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in animation to sections
-const sections = document.querySelectorAll('.about, .goals, .pricing, .online, .steps, .results, .method, .faq, .final-cta, .instagram-section');
+const sections = document.querySelectorAll('.about, .goals, .pricing, .online, .steps, .results, .gallery, .method, .faq, .final-cta, .instagram-section');
 sections.forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
